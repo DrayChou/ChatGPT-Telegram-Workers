@@ -7,10 +7,10 @@
   "scripts": {
     "lint": "make lint",
     "build": "make build",
-    "debug": "wrangler dev --local",
-    "wrangler": "wrangler",
-    "deploy:dist": "wrangler deploy",
-    "deploy:build": "npm run build && wrangler deploy"
+    "debug": "npx wrangler dev --local",
+    "wrangler": "npx wrangler",
+    "deploy:dist": "npx wrangler deploy",
+    "deploy:build": "npm run build && npx wrangler deploy"
   },
   "devDependencies": {
     "esbuild": "^0.17.11",
