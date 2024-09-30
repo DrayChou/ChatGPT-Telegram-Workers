@@ -211,8 +211,8 @@ const ENV_KEY_MAPPER = {
   WORKERS_AI_MODEL: "WORKERS_CHAT_MODEL"
 };
 class Environment extends EnvironmentConfig {
-  BUILD_TIMESTAMP = 1726714840 ;
-  BUILD_VERSION = "bb11947" ;
+  BUILD_TIMESTAMP = 1727712448 ;
+  BUILD_VERSION = "39288b8" ;
   I18N = loadI18n();
   PLUGINS_ENV = {};
   USER_CONFIG = createAgentUserConfig();
