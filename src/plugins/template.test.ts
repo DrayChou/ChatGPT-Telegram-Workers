@@ -13,3 +13,15 @@ import { executeRequest } from './template';
     const template = JSON.parse(fs.readFileSync(plugin, 'utf8'));
     executeRequest(template, { DATA: 'example' }).then(console.log).catch(console.error);
 }
+
+{
+    const plugin = './plugins/qweather.json';
+    const template = JSON.parse(fs.readFileSync(plugin, 'utf8'));
+    executeRequest(template, { DATA: ['101020100'] }).then(console.log).catch(console.error);
+}
+
+{
+    const plugin = './plugins/ipim.json';
+    const template = JSON.parse(fs.readFileSync(plugin, 'utf8'));
+    executeRequest(template, { DATA: '8.8.8.8' }).then(console.log).catch(console.error);
+}

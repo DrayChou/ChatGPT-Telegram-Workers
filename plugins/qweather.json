@@ -5,7 +5,7 @@
         "accept": "application/json"
     },
     "input": {
-        "type": "text",
+        "type": "space-separated",
         "required": true
     },
     "query": {

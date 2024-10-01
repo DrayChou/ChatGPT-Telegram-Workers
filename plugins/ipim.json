@@ -1,0 +1,19 @@
+{
+    "url": "https://ip.im/{{DATA}}",
+    "method": "GET",
+    "input": {
+        "required": true
+    },
+    "response": {
+        "content": {
+            "input_type": "text",
+            "output_type": "text",
+            "output": "{{.}}"
+        },
+        "error": {
+            "input_type": "json",
+            "output_type": "text",
+            "output": "Error: {{message}}"
+        }
+    }
+}
