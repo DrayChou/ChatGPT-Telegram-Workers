@@ -1,6 +1,13 @@
 {
     "url": "https://ip.im/{{DATA}}",
     "method": "GET",
+    "headers": {
+        "user-agent": "curl/7.68.0",
+        "accept": "text/html",
+        "accept-encoding": "gzip",
+        "accept-language": "en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7",
+        "cache-control": "no-cache"
+    },
     "input": {
         "required": true
     },
