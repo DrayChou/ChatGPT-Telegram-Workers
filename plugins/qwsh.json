@@ -1,0 +1,27 @@
+{
+    "url": "https://devapi.qweather.com/v7/weather/now",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    },
+    "input": {
+        "type": "text",
+        "required": false
+    },
+    "query": {
+        "location": "{{#if DATA === 'sh'}}101020100{{#else}}{{#if DATA === 'bj'}}101010100{{#else}}{{#if DATA === 'gz'}}101280101{{#else}}101020100{{/if}}{{/if}}{{/if}}",
+        "key": "{{ENV.qweather_api_key}}"
+    },
+    "response": {
+        "content": {
+            "input_type": "json",
+            "output_type": "html",
+            "output": "\n<b>上海天气: {{now.obsTime}}</b>\n<code>温度: {{now.temp}}°C, 体感温度: {{now.feelsLike}}°C, 天气: {{now.text}}, 风向: {{now.windDir}}, 风速: {{now.windSpeed}} km/h, 湿度: {{now.humidity}}%</code>\n"
+        },
+        "error": {
+            "input_type": "json",
+            "output_type": "text",
+            "output": "Error: {{code}}"
+        }
+    }
+}
