@@ -9,7 +9,7 @@
         "cache-control": "no-cache"
     },
     "input": {
-        "required": true
+        "required": false
     },
     "response": {
         "content": {
@@ -18,9 +18,9 @@
             "output": "{{.}}"
         },
         "error": {
-            "input_type": "json",
+            "input_type": "text",
             "output_type": "text",
-            "output": "Error: {{message}}"
+            "output": "Error: {{.}}"
         }
     }
 }
