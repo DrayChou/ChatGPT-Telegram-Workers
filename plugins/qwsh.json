@@ -9,7 +9,7 @@
         "required": false
     },
     "query": {
-        "location": "{{#if DATA === 'sh'}}101020100{{#else}}{{#if DATA === 'bj'}}101010100{{#else}}{{#if DATA === 'gz'}}101280101{{#else}}101020100{{/if}}{{/if}}{{/if}}",
+        "location": "101020100",
         "key": "{{ENV.qweather_api_key}}"
     },
     "response": {
