@@ -19,7 +19,7 @@ You can customize the system initialization information so that your debugged pe
 
 <details>
 <summary>example</summary>
-<img style="max-width: 600px;" alt="image" src="./doc/demo.jpg">
+<img style="max-width: 600px;" alt="image" src="./doc/demo.png">
 </details>
 
 
@@ -27,13 +27,14 @@ You can customize the system initialization information so that your debugged pe
 
 - Serverless deployment
 - Multi-platform deployment support (Cloudflare Workers, Vercel, Docker[...](doc/en/PLATFORM.md))
-- Adaptation to multiple AI service providers (OpenAI, Azure OpenAI, Cloudflare AI, Cohere, Anthropic, Mistral...)
+- Adaptation to multiple AI service providers (OpenAI, Azure OpenAI, Cloudflare AI, Cohere, Anthropic, Mistral, DeepSeek, Gemini, Groq[...](doc/en/CONFIG.md))
+- Switching Models with InlineKeyboards
 - Custom commands (can achieve quick switching of models, switching of robot presets)
 - Support for multiple Telegram bots
 - Streaming output
 - Multi-language support
 - Text-to-image generation
-- [Plugin System](plugins), customizable plugins.
+- [Plugin System](doc/en/PLUGINS.md), customizable plugins.
 
 
 ## Documentation

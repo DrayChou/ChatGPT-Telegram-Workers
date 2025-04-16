@@ -28,15 +28,15 @@ toml 内容与cloudflare workers配置文件兼容
 ## 本地运行
 
 ```shell
-npm install
-npm run start:local
+pnpm install
+pnpm run start:local
 ```
 or
 
 ```shell
-npm install
-npm run build:local
-CONFIG_PATH=./config.json TOML_PATH=./wrangler.toml npm run start:dist
+pnpm install
+pnpm run build:local
+CONFIG_PATH=./config.json TOML_PATH=./wrangler.toml pnpm run start:dist
 ```
 
 
@@ -49,7 +49,7 @@ docker build -t chatgpt-telegram-workers:latest .
 ```
 or
 ```shell
-npm run build:docker # 更快(直接使用本地构建的结果创建镜像)
+pnpm run build:docker # 更快(直接使用本地构建的结果创建镜像)
 ```
 
 ### 2. 运行容器
@@ -70,9 +70,9 @@ docker-compose up # edit the docker-compose.yml to change the config file path
 
 ## 使用Docker hub镜像
 
-https://hub.docker.com/r/tbxark/chatgpt-telegram-workers
+https://github.com/TBXark/ChatGPT-Telegram-Workers/pkgs/container/chatgpt-telegram-workers
 
 ```shell
-docker pull tbxark/chatgpt-telegram-workers
-docker run -d -p 8787:8787 -v $(pwd)/config.json:/app/config.json:ro -v $(pwd)/wrangler.toml:/app/config.toml:ro chatgpt-telegram-workers:latest
+docker pull ghcr.io/tbxark/chatgpt-telegram-workers:latest
+docker run -d -p 8787:8787 -v $(pwd)/config.json:/app/config.json:ro -v $(pwd)/wrangler.toml:/app/config.toml:ro ghcr.io/tbxark/chatgpt-telegram-workers:latest
 ```

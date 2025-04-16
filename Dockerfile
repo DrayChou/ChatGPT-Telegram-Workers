@@ -1,16 +1,24 @@
-FROM node:alpine as DEV
+FROM node:20-slim AS build
+
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+
+RUN corepack disable && npm install -g pnpm@latest
+
+COPY . /app
+WORKDIR /app
+
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
+RUN pnpm run build:local
+
+FROM node:20-slim AS prod
 
 WORKDIR /app
-COPY package.json vite.config.ts tsconfig.json ./
-COPY src ./src
-RUN npm install && npm run build:local
 
-FROM node:alpine as PROD
+COPY --from=build /app/packages/apps/local/dist/index.js /app/dist/index.js
+COPY --from=build /app/packages/apps/local/package-docker.json /app/package.json
 
-WORKDIR /app
-COPY --from=DEV /app/dist/index.js /app/dist/index.js
-COPY --from=DEV /app/package.json /app/
-RUN npm install --only=production --omit=dev
-RUN apk add --no-cache sqlite
+RUN npm install
 EXPOSE 8787
-CMD ["npm", "run", "start:dist"]
+
+CMD ["node", "/app/dist/index.js"]
